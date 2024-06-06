@@ -1,35 +1,14 @@
-// const Navbar = () => {
-//   return (
-//     <>
-//       <nav>
-//         <div className=" bg-slate-600 flex justify-between items-center text-white font-semibold p-4">
-//           <h1>
-//             <a href="#">MyEcomm</a>
-//           </h1>
 
-//           <div className="flex gap-3 items-center">
-//             <a href="#">Home</a>
-//             <a href="#">Contact</a>
-//             <a href="#">Product</a>
-//             <a href="#">About</a>
-//             <button className="border border-white p-[5px] rounded-2xl hover:bg-white hover:text-slate-600">
-//               Login
-//             </button>
-//           </div>
-//         </div>
-//       </nav>
-
-//     </>
-//   );
-// };
-
-// export default Navbar;
 
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink , useNavigate} from "react-router-dom";
 import { FiShoppingCart } from "react-icons/fi";
+import {useAuth} from "../contextAuth/ContextAuth";
+
+
+
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Product", href: "/product" },
@@ -39,7 +18,19 @@ const navigation = [
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const {isAuthenticated,logout,login} = useAuth()
 
+  const navigate  = useNavigate();
+
+  const handleLogin = ()=>{
+    login();
+    navigate('/login')
+  }
+
+  const handleLogout = async()=>{
+    await logout()
+    navigate('/')
+  }
   return (
     <div className="bg-white">
       <header className="absolute inset-x-0 top-0 z-50">
@@ -76,12 +67,23 @@ export default function Example() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <NavLink
-              to="/login"
-              className="text-sm font-semibold leading-6 text-gray-900"
-            >
-              Log in <span aria-hidden="true">&rarr;</span>
-            </NavLink>
+            
+            {
+              isAuthenticated ? (
+               <button onClick={handleLogout} className="text-sm font-semibold leading-6 text-gray-900"
+               >
+                  LoginNav <span aria-hidden="true">&rarr;</span>
+               </button>
+              ):(
+                
+
+                <button onClick={handleLogin} className="text-sm font-semibold leading-6 text-gray-900">
+                LogoutNav <span aria-hidden="true">&rarr;</span>
+               </button>
+                
+              )
+            }
+            
             <NavLink to="/cart">
               <FiShoppingCart className="text-xl" />
             </NavLink>

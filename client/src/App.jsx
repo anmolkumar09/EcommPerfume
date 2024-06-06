@@ -8,6 +8,7 @@ import Error from "./pages/Error.jsx";
 import { Product } from "./Product.jsx";
 import SingleProduct from "./SingleProduct.jsx";
 import Cart from "./pages/Cart.jsx";
+import Protected from "./Protected.jsx";
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<Error />} />
+          <Route path='/protected' element={<Protected>
+            <Home/>
+          </Protected>}/>
         </Routes>
       </Router>
     </>
