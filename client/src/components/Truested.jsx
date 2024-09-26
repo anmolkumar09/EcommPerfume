@@ -23,7 +23,7 @@ const Trusted = () => {
             <h2>Alice</h2>
             <p className="text-sm text-gray-600">
               {" "}
-              Great Products 100% authentic fragance and easy to Carry
+              Absolutely love this fragrance! It's light, refreshing, and lasts all day.
             </p>
           </div>
           <div className="bg-gray-200 flex items-center justify-center flex-col text-center p-1 rounded-2xl">
@@ -34,7 +34,7 @@ const Trusted = () => {
             <h2>Anisha</h2>
             <p className="text-sm text-gray-600">
               {" "}
-              Great Products 100% authentic fragance and easy to Carry
+              One of the best perfumes I’ve tried. Compliments keep coming!
             </p>
           </div>
           <div className="bg-gray-200 flex items-center justify-center flex-col text-center p-1 rounded-2xl">
@@ -45,7 +45,7 @@ const Trusted = () => {
             <h2>Akansha</h2>
             <p className="text-sm text-gray-600">
               {" "}
-              Great Products 100% authentic fragance and easy to Carry
+              It’s fresh and elegant, I feel confident every time I wear it!
             </p>
           </div>
           <div className="bg-gray-200 flex items-center justify-center flex-col text-center p-1 rounded-2xl">
@@ -56,7 +56,7 @@ const Trusted = () => {
             <h2>Rita</h2>
             <p className="text-sm text-gray-600">
               {" "}
-              Great Products 100% authentic fragance and easy to Carry
+              Ghis scent is heavenly! So fresh, feminine, and classy.
             </p>
           </div>
         </div>

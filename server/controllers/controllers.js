@@ -1,4 +1,4 @@
-const UserModal = require("../modals/modals");
+const UserModal = require("../modals/modals.js");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
@@ -99,3 +99,5 @@ module.exports = {
     logoutController
   };
   
+
+// -------------------- Review Api ---------------------

@@ -16,8 +16,8 @@ module.exports = function (req, res, next) {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded.user;
     // Success message
-    // const successMessage = "Authentication successful"; // Customize your success message here
-    // res.status(200).json({ message: successMessage, success: true });
+    const successMessage = "Authentication successful"; 
+    res.status(200).json({ message: successMessage, success: true });
     next();
   } catch (err) {
     res.status(401).json({ message: "Token is not valid", success: false });
