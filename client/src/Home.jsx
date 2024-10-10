@@ -5,6 +5,7 @@ import Service from "./components/Service";
 
 import MultiCarousel from "./components/MultiCarousal";
 import HomePageProduct from "./components/HomePageProduct";
+import Footer from "./components/Footer";
 const Home = () => {
   return (
     <div>
@@ -14,6 +15,7 @@ const Home = () => {
       <Trusted />
       <MultiCarousel/>
       <HomePageProduct/>
+      <Footer/>
     </div>
   );
 };
